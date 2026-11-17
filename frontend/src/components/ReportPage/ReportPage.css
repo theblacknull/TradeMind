@@ -2,7 +2,7 @@
   background-color: #1B1F24;
   min-height: 100vh;
   color: white;
-  font-family: sans-serif;
+  font-family: inherit;
 }
 
 .report-header {

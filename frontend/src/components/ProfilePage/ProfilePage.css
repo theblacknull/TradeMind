@@ -1,7 +1,7 @@
 .profile-page {
   background-color: #1B1F24;
   color: white;
-  font-family: sans-serif;
+  font-family: inherit;
   min-height: 100vh; 
   display: flex;
   flex-direction: column;

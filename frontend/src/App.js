@@ -3,12 +3,15 @@ import ProtectedRoute from './utils/ProtectedRoute';
 import Home from './components/Home/Home';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import ReportPage from './components/ReportPage/ReportPage';
+import ChatBubble from './components/AssistantChat/ChatBubble';
+import AssistantPage from './components/AssistantChat/AssistantPage';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/assistant" element={<AssistantPage />} />
         <Route path="/profile" element={
           <ProtectedRoute>
             <ProfilePage />
@@ -20,6 +23,7 @@ function App() {
           </ProtectedRoute>
         } />
       </Routes>
+      <ChatBubble />
     </Router>
   );
 }

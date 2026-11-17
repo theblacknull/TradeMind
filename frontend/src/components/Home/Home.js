@@ -14,6 +14,7 @@ export default function LandingPage() {
   const [showLogin, setShowLogin] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
+  const openAssistant = () => navigate('/assistant');
 
   useEffect(() => {
     const token = localStorage.getItem('jwt_token');
@@ -68,7 +69,13 @@ export default function LandingPage() {
   return (
     <div className="landing-page">
       <header className="header">
-        <img src={logoImage} alt="TradeMind" className="logo" />
+        <div className="header-left">
+          <img src={logoImage} alt="TradeMind" className="logo" />
+          <button className="assistant-link" onClick={openAssistant}>
+            <span className="dot" aria-hidden="true" />
+            Assistant AI
+          </button>
+        </div>
         <nav>
           <ul className="nav-list">
             {!isAuthenticated ? (
@@ -102,7 +109,7 @@ export default function LandingPage() {
           <h2>Your Financial Future Starts Here</h2>
           <p>Upload your crypto wallet address and get a professional, personalized financial report – crafted as if by your own private banker.</p>
           <p>Let's shape a brighter financial future, together. Let us help you make the right decisions with tailored insights you can trust.</p>
-          <button className="btn" onClick={goToReport}>Get Your Report</button>
+          <button className="btn-start" onClick={openAssistant}>Start</button>
         </div>
         <div className="hero-image">
           <img src={accountingOfficeImage} alt="TradeMind" />
@@ -127,6 +134,7 @@ export default function LandingPage() {
       </section>
 
       <section className="call-to-action">
+        <button className="btn-start cta-start" onClick={openAssistant}>Start</button>
         <h3>One Simple Step. Endless Financial Clarity.</h3>
         <p>TradeMind is the easiest way to understand your crypto portfolio. Whether you're managing assets or exploring investments, our report gives you the insights you need.</p>
       </section>
