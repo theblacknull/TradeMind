@@ -18,7 +18,7 @@ export default function ReportPage() {
     const token = localStorage.getItem('jwt_token');
 
     try {
-      const response = await fetch('http://localhost:8000/report', {
+      const response = await fetch((process.env.REACT_APP_API_URL || "http://localhost:8000") + "/report", {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

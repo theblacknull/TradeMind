@@ -6,7 +6,7 @@ export default function DeletePopup({ onClose }) {
   const handleDelete = async () => {
     const token = localStorage.getItem("jwt_token");
     try {
-      const res = await fetch("http://localhost:8000/auth/delete", {
+      const res = await fetch((process.env.REACT_APP_API_URL || "http://localhost:8000") + "/auth/delete", {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`

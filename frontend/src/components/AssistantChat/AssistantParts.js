@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const API = 'http://localhost:8000/assistant';
+const API = (process.env.REACT_APP_API_URL || "http://localhost:8000") + "/assistant";
 
 const FALLBACK_MODELS = [
   { id: 'nvidia/nemotron-3.5-super-vl-120b-a12b', label: 'Nemotron 3.5 120B', vision: true },
