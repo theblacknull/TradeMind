@@ -5,9 +5,9 @@ const cors = require('cors');
 const app = express();
 const port = 8000;
 
-connectDB();
+connectDB().catch((err) => console.error("Database init failed:", err.message));
 
-app.use(cors());
+app.use(cors({ origin: (process.env.CORS_ORIGINS || '*').split(',') }));
 app.use(express.json({ limit: '8mb' }));
 
 const authRoutes = require('./routes/authenticationRoute');
