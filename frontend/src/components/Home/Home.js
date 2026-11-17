@@ -5,9 +5,9 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import './Home.css';
-import accountingOfficeImage from '../../assets/images/accounting-office.png';
-import nycSkylineImage from '../../assets/images/nyc-skyline.png';
-import businessmenHandshakeImage from '../../assets/images/businessmen-handshake.png';
+import accountingOfficeImage from '../../assets/images/hero-businessman.jpg';
+import nycSkylineImage from '../../assets/images/nyc-skyline-sunset.jpg';
+import businessmenHandshakeImage from '../../assets/images/handshake-window.jpg';
 import logoImage from '../../assets/images/Logo.png';
 
 export default function LandingPage() {
